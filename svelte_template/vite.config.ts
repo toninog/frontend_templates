@@ -15,14 +15,6 @@ export default defineConfig({
 	},
 	build: {
 		sourcemap: false,
-		rollupOptions: {
-			output: {
-				manualChunks: {
-					'ui-vendor': ['lucide-svelte'],
-					'http-vendor': ['axios']
-				}
-			}
-		},
 		chunkSizeWarningLimit: 200
 	}
 });

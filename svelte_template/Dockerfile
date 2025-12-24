@@ -28,6 +28,7 @@ WORKDIR /app
 # Copy built application from builder
 COPY --from=builder /app/build ./build
 COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/package-lock.json ./package-lock.json
 
 # Install production dependencies only
 RUN npm ci --omit=dev
