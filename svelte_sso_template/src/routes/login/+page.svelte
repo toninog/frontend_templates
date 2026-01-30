@@ -1,7 +1,7 @@
 <script lang="ts">
   import { goto } from '$app/navigation'
   import { LogIn } from 'lucide-svelte'
-  import { login, isAuthenticated } from '$lib/stores/auth'
+  import { auth, isAuthenticated } from '$lib/stores/auth'
   import config from '$lib/config'
 
   /**
@@ -29,7 +29,7 @@
     isLoading = true
 
     try {
-      await login({ email, password })
+      await auth.login()
       goto(config.routes.home)
     } catch (err) {
       error = 'Login failed. Please try again.'

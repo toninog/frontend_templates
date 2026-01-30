@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
   import { goto } from '$app/navigation'
   import { LogOut, Settings } from 'lucide-svelte'
-  import { user, logout } from '$lib/stores/auth'
+  import { auth, user } from '$lib/stores/auth'
   import config from '$lib/config'
 
   /**
@@ -34,7 +34,7 @@
   })
 
   function handleLogout() {
-    logout()
+    auth.logout()
     goto('/')
     isOpen = false
   }
